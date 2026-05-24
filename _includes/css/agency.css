@@ -272,24 +272,29 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    /* background-image: url('{{ site.baseurl }}/img/header-bg.png');   有背景*/
+    /* background-image: url('{{ site.baseurl }}/img/header-bg.png');   有背景 */
     background-image: url('{{ site.baseurl }}/img/header-no bg.png');   
-    background-position: center center;
+    background-position: center center;  
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: 80%;
-    -o-background-size: cover;
-    padding-top: 150px; 
+    background-size: contain;              /* 👈 让背景图完美填满整个大图区域 */
+    padding: 60px 0;                    /* 👈 调节上下内边距，控制这个蓝色大图的高度 */
+    
+    /* 核心：实现你截图里的“两边留白”大盒子效果 */
+    max-width: 1200px;                   /* 👈 限制大图区域的最大总宽度，这个值可以根据喜好调整（比如 1140px 或 1200px） */
+    margin-left: auto;                   /* 👈 自动外边距，让整个大图在宽屏下永远居中 */
+    margin-right: auto;                  /* 👈 自动外边距，两边就会空出等宽的灰色/白色背景 */
+    box-sizing: border-box;
 }
 
 header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 50px;
-    text-align: left;                /* ← 改这行：center 改成 left */
-    margin-left: 20px;               /* ← 添加：左边距 */
-    margin-top: 60px;               /* ← 添加：上边距（往下推） */
-    width: 50%;                      /* ← 添加：只占一半宽度 */
+    padding-top: 60px;                 /* 👈 4. 增加顶部内边距，把文字往下推到机器人的“左下方”位置 */
+    padding-bottom: 60px;
+    text-align: left;                   /* 👈 5. 文字左对齐 */
+    
+    /* 👈 6. 核心：限制文字区域只占左侧的一半（45%），这样绝对不会碰到右边的机器人 */
+    width: 45%;                         
+    margin-left: 5%;                    /* 让左边稍微留有一点呼吸间距 */
+    box-sizing: border-box;
 }
 
 header .intro-text .intro-lead-in {
@@ -311,8 +316,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px;
+        padding-top: 260px;
+        padding-bottom: 10px;
     }
 
     header .intro-text .intro-lead-in {
@@ -327,9 +332,9 @@ header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
         font-family: {{ site.data.template.font.primary }};
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 700;
-        line-height: 50px;
+        line-height: 45px;
     }
 }
 
