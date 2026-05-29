@@ -272,28 +272,23 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    /* background-image: url('{{ site.baseurl }}/img/header-bg.png');   有背景 */
     background-image: url('{{ site.baseurl }}/img/header-no bg.png');   
     background-position: center center;  
     background-repeat: no-repeat;
-    background-size: contain;              /* 👈 让背景图完美填满整个大图区域 */
-    padding: 60px 0;                    /* 👈 调节上下内边距，控制这个蓝色大图的高度 */
-    
-    /* 核心：实现你截图里的“两边留白”大盒子效果 */
-    max-width: 1200px;                   /* 👈 限制大图区域的最大总宽度，这个值可以根据喜好调整（比如 1140px 或 1200px） */
-    margin-left: auto;                   /* 👈 自动外边距，让整个大图在宽屏下永远居中 */
-    margin-right: auto;                  /* 👈 自动外边距，两边就会空出等宽的灰色/白色背景 */
+    background-size: contain;              /* 背景图填满 */
+    padding: 60px 0;                    /* 调节上下内边距 */
+    max-width: 1200px;                   /* 限制大图区域的最大总宽 */
+    margin-left: auto;                   /* 自动外边距，大图在宽屏下居中 */
+    margin-right: auto;                  /* 自动外边距，两边空出等宽背景 */
     box-sizing: border-box;
 }
 
 header .intro-text {
-    padding-top: 60px;                 /* 👈 4. 增加顶部内边距，把文字往下推到机器人的“左下方”位置 */
+    padding-top: 60px;                 /* 增加顶部内边距 */
     padding-bottom: 60px;
-    text-align: left;                   /* 👈 5. 文字左对齐 */
-    
-    /* 👈 6. 核心：限制文字区域只占左侧的一半（45%），这样绝对不会碰到右边的机器人 */
+    text-align: left;                   /* 文字左对齐 */
     width: 45%;                         
-    margin-left: 5%;                    /* 让左边稍微留有一点呼吸间距 */
+    margin-left: 5%;                    /* 左边间距 */
     box-sizing: border-box;
 }
 
@@ -878,8 +873,6 @@ img::-moz-selection {
 
 body {
     -webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
-
-    /* background-color: #8f9dad;  👈 兜底颜色 */
 
     background: linear-gradient(
         to bottom,
