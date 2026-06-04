@@ -1,0 +1,38 @@
+<!-- Media Section (placeholder grid, portfolio-style) -->
+    <section id="media" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Media</h2>
+                    <h3 class="section-subheading text-muted">Content coming soon.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <div class="media-photo">
+                        <img src="{{ site.baseurl }}/img/China%20MBA%20Entrepreneurship%20Competition.jpg" class="img-responsive img-centered" alt="China MBA Entrepreneurship Competition">
+                    </div>
+                    <div class="portfolio-caption">
+                        <h4>Honors &amp; Awards</h4>
+                        <p class="text-muted">Bronze Award Winner, China MBA Entrepreneurship Competition (National Finals)</p>
+                    </div>
+                </div>
+                {% for i in (2..3) %}
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <div class="portfolio-link media-placeholder">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="media-placeholder-box" aria-hidden="true"></div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h4>Media {{ i }}</h4>
+                        <p class="text-muted">Placeholder</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
