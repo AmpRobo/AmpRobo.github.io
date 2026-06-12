@@ -469,9 +469,23 @@ section h3.section-subheading {
     font-weight: 400;
 }
 
+.product-subheading {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.45;
+    text-align: center;
+}
+
 @media(min-width:768px) {
     section {
         padding: 150px 0;
+    }
+}
+
+@media(max-width:767px) {
+    .product-subheading-break {
+        display: none;
     }
 }
 
