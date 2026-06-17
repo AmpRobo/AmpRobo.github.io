@@ -18,26 +18,6 @@
                         </div>
                         <img src="{{ site.baseurl }}/img/{{ item.thumbnail | replace: ' ', '%20' }}" class="img-responsive img-centered" alt="{{ item.alt }}">
                     </a>
-                    <div class="portfolio-caption">
-                        <h4>{{ item.title }}</h4>
-                        <p class="text-muted">{{ item.subtitle }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-                {% for i in (2..3) %}
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <div class="portfolio-link media-placeholder">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <div class="media-placeholder-box" aria-hidden="true"></div>
-                    </div>
-                    <div class="portfolio-caption">
-                        <h4>Media {{ i }}</h4>
-                        <p class="text-muted">Placeholder</p>
-                    </div>
                 </div>
                 {% endfor %}
             </div>
