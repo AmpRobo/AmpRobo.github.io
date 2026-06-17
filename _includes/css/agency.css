@@ -642,6 +642,18 @@ section h3.section-subheading {
     max-width: 400px;
 }
 
+#media .portfolio-item .portfolio-link {
+    height: 260px;
+    overflow: hidden;
+    background: #fff;
+}
+
+#media .portfolio-item .portfolio-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover,
 #media .portfolio-item .portfolio-link .portfolio-hover {
     position: absolute;

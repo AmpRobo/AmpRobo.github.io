@@ -1,7 +1,20 @@
 - modal-id: 1
-  title: Honors & Awards
-  subtitle: Bronze Award Winner, China MBA Entrepreneurship Competition (National Finals)
-  thumbnail: China MBA Entrepreneurship Competition.jpg
-  img: China MBA Entrepreneurship Competition.jpg
-  alt: China MBA Entrepreneurship Competition
+  title: National Natural Science Foundation of China
+  thumbnail: media/China MBA Entrepreneurship Competition.jpg
+  img: media/China MBA Entrepreneurship Competition.jpg
+  alt: National Natural Science Foundation of China
   description: Bronze Award Winner at the China MBA Entrepreneurship Competition (National Finals).
+
+- modal-id: 2
+  title: Tianfu Jiangxi Laboratory Technology Transfer Project
+  thumbnail: media/honor2.png
+  img: media/honor2.png
+  alt: Tianfu Jiangxi Laboratory Technology Transfer Project
+  description: "&ldquo;Rongpiao Cup &ndash; Jiaozi&rdquo; Youth Innovation and Entrepreneurship Competition &mdash; Excellence Award"
+
+- modal-id: 3
+  title: Shanxi Provincial Natural Science Foundation
+  thumbnail: media/honor3.png
+  img: media/honor3.png
+  alt: Shanxi Provincial Natural Science Foundation
+  description: "&ldquo;Maker in China&rdquo; SME Innovation and Entrepreneurship Competition (Sichuan Province) &mdash; First Prize"
