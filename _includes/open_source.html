@@ -1,29 +1,153 @@
 <!-- Open Source Section -->
-    <section id="portfolio" class="bg-light-gray">
+    <section id="portfolio" class="open-source-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Open Source</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">A modular robotics software flow from sensing to robot execution.</h3>
                 </div>
             </div>
-            <div class="row">
-            {% for post in site.posts %}
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>{{ post.title }}</h4>
-                        <p class="text-muted">{{ post.subtitle }}</p>
-                    </div>
+            <div class="open-source-workflow" data-open-source-workflow>
+                <div class="open-source-diagram" aria-label="Open source robotics workflow">
+                    <svg class="workflow-lines" viewBox="0 0 760 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                        <defs>
+                            <marker id="workflow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z"></path>
+                            </marker>
+                        </defs>
+                        <path class="workflow-line" data-from="Perception.right-center" data-to="Planning.left-center" d="M207 69 H285"></path>
+                        <path class="workflow-line" data-from="Planning.right-center" data-to="Control.left-center" d="M475 69 H552"></path>
+                        <path class="workflow-line" data-from="MapData.bottom-left" data-to="Perception.left-center" d="M333 458 V486 H8 V69 H40"></path>
+                        <path class="workflow-line" data-from="Sensing.top-left" data-to="Perception.bottom-left" d="M80 400 V98"></path>
+                        <path class="workflow-line workflow-line-bidirectional" data-from="Perception.bottom-center" data-to="Planning.bottom-right" d="M124 98 V320 H470 V128 H428 V98"></path>
+                        <path class="workflow-line workflow-line-bidirectional" data-from="Perception.bottom-right" data-to="Control.bottom-left" d="M165 98 V150 H594 V98"></path>
+                        <path class="workflow-line" data-from="Sensing.top-right" data-to="Planning.bottom-left" d="M160 400 V344 H300 V128 H333 V98"></path>
+                        <path class="workflow-line" data-from="Localization.top-center" data-to="Planning.bottom-center" d="M380 220 V98"></path>
+                        <path class="workflow-line" data-from="RobotInterface.top-center" data-to="Control.bottom-center" d="M636 400 V98"></path>
+                        <path class="workflow-line" data-from="Control.bottom-right" data-to="RobotInterface.top-right" d="M678 98 V400"></path>
+                        <path class="workflow-line" data-from="MapData.bottom-right" data-to="Control.right-center" d="M428 458 V486 H744 V69 H720"></path>
+                        <path class="workflow-line" data-from="Sensing.top-center" data-to="Localization.bottom-left" d="M102 400 V278"></path>
+                        <path class="workflow-line" data-from="MapData.top-center" data-to="Localization.bottom-center" d="M380 400 V278"></path>
+                        <path class="workflow-line" data-from="RobotInterface.top-left" data-to="Localization.bottom-right" d="M594 400 V278"></path>
+                        <path class="workflow-line" data-from="Sensors.top-center" data-to="Sensing.bottom-center" d="M124 512 V458"></path>
+                        <path class="workflow-line workflow-line-bidirectional" data-from="Robot.top-center" data-to="RobotInterface.bottom-center" d="M636 512 V458"></path>
+                    </svg>
+
+                    <button class="workflow-node workflow-node-box node-perception" type="button" data-target="perception">Perception</button>
+                    <button class="workflow-node workflow-node-box node-planning" type="button" data-target="planning">Planning</button>
+                    <button class="workflow-node workflow-node-box node-control is-active" type="button" data-target="control">Control</button>
+                    <button class="workflow-node workflow-node-box node-localization" type="button" data-target="localization">Localization</button>
+                    <button class="workflow-node workflow-node-box node-sensing" type="button" data-target="sensing">Sensing</button>
+                    <button class="workflow-node workflow-node-box node-map" type="button" data-target="map-data">Map Data</button>
+                    <button class="workflow-node workflow-node-box node-interface" type="button" data-target="robot-interface">Robot Interface</button>
+                    <button class="workflow-node workflow-node-circle node-sensors" type="button" data-target="sensors">Sensors</button>
+                    <button class="workflow-node workflow-node-circle node-robot" type="button" data-target="robot">Robot</button>
                 </div>
-            {% endfor %}
+
+                <div class="open-source-detail" data-open-source-detail tabindex="0" aria-label="Workflow details">
+                    <article class="workflow-detail-item" data-detail="perception">
+                        <h3>Perception</h3>
+                        <p>Transforms sensor streams into a structured understanding of the environment, including obstacles, traversable space, semantic objects, and scene state.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="planning">
+                        <h3>Planning</h3>
+                        <p>Calculates a safe path for the intelligent robot along the desired route, using perception and map information to avoid objects and obstacles.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="control">
+                        <h3>Control</h3>
+                        <p>Converts planning information into precise robot commands such as steering, braking, acceleration, speed, and posture adjustments.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="localization">
+                        <h3>Localization</h3>
+                        <p>Estimates the robot position and orientation by combining map data, sensor observations, and motion feedback into a stable pose estimate.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="sensing">
+                        <h3>Sensing</h3>
+                        <p>Collects raw signals from cameras, lidar, inertial units, encoders, and other onboard devices, then prepares them for downstream modules.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="map-data">
+                        <h3>Map Data</h3>
+                        <p>Provides road, terrain, boundary, landmark, and route context so planning and localization modules can reason beyond the immediate sensor range.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="robot-interface">
+                        <h3>Robot Interface</h3>
+                        <p>Converts control signals into commands according to the robot hardware characteristics, actuator limits, communication protocol, and safety rules.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="sensors">
+                        <h3>Sensors</h3>
+                        <p>Represents the physical sensing layer that observes the world and provides the measurements used by the robotics software stack.</p>
+                    </article>
+                    <article class="workflow-detail-item" data-detail="robot">
+                        <h3>Robot</h3>
+                        <p>Executes the final commands through its compute, drive, actuator, and safety systems, closing the loop between software decisions and motion.</p>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        (function () {
+            var workflow = document.querySelector('[data-open-source-workflow]');
+            if (!workflow) {
+                return;
+            }
+
+            var nodes = workflow.querySelectorAll('.workflow-node');
+            var detailPanel = workflow.querySelector('[data-open-source-detail]');
+            var details = Array.prototype.slice.call(workflow.querySelectorAll('[data-detail]'));
+            var detailOrder = [
+                'robot',
+                'perception',
+                'planning',
+                'control',
+                'localization',
+                'sensing',
+                'map-data',
+                'robot-interface',
+                'sensors'
+            ];
+
+            function activate(targetName) {
+                var target = workflow.querySelector('[data-detail="' + targetName + '"]');
+                if (!target || !detailPanel) {
+                    return;
+                }
+
+                var currentIndex = detailOrder.indexOf(targetName);
+                if (currentIndex === -1) {
+                    return;
+                }
+
+                var previousName = detailOrder[(currentIndex - 1 + detailOrder.length) % detailOrder.length];
+                var nextName = detailOrder[(currentIndex + 1) % detailOrder.length];
+
+                Array.prototype.forEach.call(nodes, function (node) {
+                    node.classList.toggle('is-active', node.getAttribute('data-target') === targetName);
+                });
+
+                details.forEach(function (detail) {
+                    var detailName = detail.getAttribute('data-detail');
+                    detail.classList.toggle('is-active', detailName === targetName);
+                    detail.classList.toggle('is-previous', detailName === previousName);
+                    detail.classList.toggle('is-next', detailName === nextName);
+                    detail.classList.toggle('is-visible', detailName === previousName || detailName === targetName || detailName === nextName);
+                });
+
+                detailPanel.classList.remove('is-changing');
+                void detailPanel.offsetWidth;
+                detailPanel.classList.add('is-changing');
+            }
+
+            Array.prototype.forEach.call(nodes, function (node) {
+                node.addEventListener('mouseenter', function () {
+                    activate(node.getAttribute('data-target'));
+                });
+                node.addEventListener('focus', function () {
+                    activate(node.getAttribute('data-target'));
+                });
+            });
+
+            activate('control');
+        }());
+    </script>
