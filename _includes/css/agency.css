@@ -632,11 +632,21 @@ section h3.section-subheading {
     background: #F7F7F7;
 }
 
+section h3.open-source-subheading {
+    margin-bottom: 0;
+}
+
+.open-source-github-link {
+    margin: 4px 0 24px;
+    font-size: 16px;
+    line-height: 1;
+}
+
 .open-source-workflow {
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
     gap: 54px;
-    align-items: stretch;
+    align-items: center;
 }
 
 .open-source-diagram {
