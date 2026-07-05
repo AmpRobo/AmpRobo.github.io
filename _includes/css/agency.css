@@ -1264,6 +1264,43 @@ section#contact .section-heading {
     color: #fff;
 }
 
+section#contact .contact-details {
+    display: inline-block;
+    margin: 22px auto 0;
+    text-align: left;
+    font-style: normal;
+}
+
+section#contact .contact-details p {
+    display: flex;
+    align-items: center;
+    margin: 0 0 14px;
+    color: #fff;
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+section#contact .contact-details i {
+    width: 34px;
+    margin-right: 12px;
+    color: #{{ site.data.template.color.primary }};
+    font-size: 32px;
+    text-align: center;
+}
+
+section#contact .contact-details a {
+    color: #fff;
+    overflow-wrap: anywhere;
+}
+
+section#contact .contact-details a:hover,
+section#contact .contact-details a:focus {
+    color: #{{ site.data.template.color.primary }};
+    text-decoration: none;
+}
+
 section#contact .form-group {
     margin-bottom: 25px;
 }
