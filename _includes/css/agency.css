@@ -483,6 +483,24 @@ section h3.section-subheading {
     }
 }
 
+#portfolio,
+#about,
+#team,
+#media {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media(min-width:768px) {
+    #portfolio,
+    #about,
+    #team,
+    #media {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+}
+
 @media(max-width:767px) {
     .product-subheading-break {
         display: none;
@@ -554,8 +572,10 @@ section h3.section-subheading {
 .service-panel img {
     display: block;
     width: 100%;
-    height: 390px;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 1448 / 1086;
+    object-fit: contain;
+    background: #fff;
 }
 
 .service-description {
@@ -601,7 +621,7 @@ section h3.section-subheading {
     }
 
     .service-panel img {
-        height: 240px;
+        height: auto;
     }
 
     .service-description {
