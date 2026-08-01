@@ -571,10 +571,11 @@ section h3.section-subheading {
 
 .service-panel img {
     display: block;
-    width: 100%;
+    width: 75%;
     height: auto;
     aspect-ratio: 1448 / 1086;
     object-fit: contain;
+    margin: 0 auto;
     background: #fff;
 }
 
