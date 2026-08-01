@@ -35,3 +35,29 @@ $('div.modal').on('show.bs.modal', function() {
 		}
 	}
 });
+
+// Services selector: keep the left options and right image/content in sync.
+$(function() {
+    function showService($tab) {
+        var service = $tab.data('service');
+
+        if ($tab.hasClass('active')) {
+            return;
+        }
+
+        $('.service-tab')
+            .removeClass('active')
+            .attr('aria-selected', 'false');
+
+        $tab
+            .addClass('active')
+            .attr('aria-selected', 'true');
+
+        $('.service-panel').removeClass('active');
+        $('.service-panel[data-service-panel="' + service + '"]').addClass('active');
+    }
+
+    $('.service-tab').on('click mouseenter focus', function() {
+        showService($(this));
+    });
+});

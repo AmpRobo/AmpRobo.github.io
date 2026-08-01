@@ -1,79 +1,60 @@
 <!-- Services Section (nav: SERVICES) -->
-    <section id="team" class="bg-light-gray">
+    <section id="team" class="services-section bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="row services-switcher">
+                <div class="col-md-4 services-tabs" role="tablist" aria-label="Services">
+                    <button type="button" class="service-tab active" data-service="hull" aria-selected="true">
+                        Hull Cleaning
+                    </button>
+                    <button type="button" class="service-tab" data-service="dam" aria-selected="false">
+                        Dam Inspection
+                    </button>
+                    <button type="button" class="service-tab" data-service="pipeline" aria-selected="false">
+                        Pipeline Inspection
+                    </button>
+                </div>
+                <div class="col-md-8 services-content">
+                    <article class="service-panel active" data-service-panel="hull">
+                        <img src="{{ site.baseurl }}/img/services/Hull cleaning.png" alt="Hull cleaning robot service">
+                        <div class="service-description">
+                            <h3>Hull Cleaning</h3>
+                            <ul>
+                                <li>Removal and recovery of attached marine growth such as oyster shells and barnacles.</li>
+                                <li>Before-and-after cleaning comparison with video documentation.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-panel" data-service-panel="dam">
+                        <img src="{{ site.baseurl }}/img/services/Dam inspection.png" alt="Dam inspection robot service">
+                        <div class="service-description">
+                            <h3>Dam Inspection</h3>
+                            <ul>
+                                <li>Close visual inspection of vertical and horizontal construction joints.</li>
+                                <li>Crack dimension measurement.</li>
+                                <li>Intake screen inspection.</li>
+                                <li>Removal of submerged driftwood.</li>
+                                <li>Gate door inspection.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-panel" data-service-panel="pipeline">
+                        <img src="{{ site.baseurl }}/img/services/Pipeline inspection.png" alt="Pipeline inspection robot service">
+                        <div class="service-description">
+                            <h3>Pipeline Inspection</h3>
+                            <ul>
+                                <li>Close visual inspection of submerged sections.</li>
+                                <li>Mooring line inspection.</li>
+                                <li>Measurement of mooring line riser angles.</li>
+                                <li>Subsea cable inspection.</li>
+                                <li>Magnetic survey of buried cables.</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
