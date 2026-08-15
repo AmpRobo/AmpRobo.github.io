@@ -58,13 +58,25 @@ $(function() {
         return;
     }
 
-    var serviceImages = {
-        product: ($carousel.data('product-images') || '').split('|'),
-        development: ($carousel.data('development-images') || '').split('|'),
-        solution: ($carousel.data('solution-images') || '').split('|')
-    };
-    var solutionDescriptions = [
+    var slides = [
         {
+            service: 'product',
+            src: ($carousel.data('product-images') || '').split('|')[0],
+            alt: 'Product Service'
+        },
+        {
+            service: 'development',
+            src: ($carousel.data('development-images') || '').split('|')[0],
+            alt: 'Development Service',
+            title: 'Development Service',
+            items: [
+                'For partners building their own underwater robot systems, Amp.Robo offers reference designs and software platforms that accelerate development.'
+            ]
+        },
+        {
+            service: 'solution',
+            src: ($carousel.data('solution-images') || '').split('|')[0],
+            alt: 'Hull Cleaning',
             title: 'Hull Cleaning',
             items: [
                 'Removal and recovery of attached marine growth such as oyster shells and barnacles.',
@@ -72,6 +84,9 @@ $(function() {
             ]
         },
         {
+            service: 'solution',
+            src: ($carousel.data('solution-images') || '').split('|')[1],
+            alt: 'Dam Inspection',
             title: 'Dam Inspection',
             items: [
                 'Close visual inspection of vertical and horizontal construction joints.',
@@ -82,6 +97,9 @@ $(function() {
             ]
         },
         {
+            service: 'solution',
+            src: ($carousel.data('solution-images') || '').split('|')[2],
+            alt: 'Pipeline Inspection',
             title: 'Pipeline Inspection',
             items: [
                 'Close visual inspection of submerged sections.',
@@ -91,68 +109,79 @@ $(function() {
                 'Magnetic survey of buried cables.'
             ]
         }
-    ];
-    var currentService = 'product';
+    ].filter(function(slide) {
+        return slide.src;
+    });
     var currentIndex = 0;
     var autoTimer;
 
     function updateDescription() {
         var $description = $('.service-carousel-description');
+        var slide = slides[currentIndex];
 
-        if (currentService !== 'solution') {
+        if (!slide || !slide.items) {
             $description
                 .addClass('is-empty')
                 .empty();
             return;
         }
 
-        var description = solutionDescriptions[currentIndex] || solutionDescriptions[0];
-        var items = description.items.map(function(item) {
+        var items = slide.items.map(function(item) {
             return '<li>' + item + '</li>';
         }).join('');
 
         $description
             .removeClass('is-empty')
-            .html('<h3>' + description.title + '</h3><ul>' + items + '</ul>');
+            .html('<h3>' + slide.title + '</h3><ul>' + items + '</ul>');
     }
 
-    function updateImage() {
-        var images = serviceImages[currentService] || [];
-        var src = images[currentIndex];
-
-        if (!src) {
-            return;
-        }
-
-        $('.service-carousel-image')
-            .attr('src', src)
-            .attr('alt', $('.service-tab[data-service="' + currentService + '"]').text().trim());
-        updateDescription();
-    }
-
-    function showService($tab) {
-        currentService = $tab.data('service');
-        currentIndex = 0;
+    function updateActiveTab() {
+        var service = slides[currentIndex] && slides[currentIndex].service;
 
         $('.service-tab')
             .removeClass('active')
             .attr('aria-selected', 'false');
 
-        $tab
+        $('.service-tab[data-service="' + service + '"]')
             .addClass('active')
             .attr('aria-selected', 'true');
+    }
 
+    function updateImage() {
+        var slide = slides[currentIndex];
+
+        if (!slide) {
+            return;
+        }
+
+        $('.service-carousel-image')
+            .attr('src', slide.src)
+            .attr('alt', slide.alt);
+        updateActiveTab();
+        updateDescription();
+    }
+
+    function showService($tab) {
+        var service = $tab.data('service');
+        var targetIndex = 0;
+
+        $.each(slides, function(index, slide) {
+            if (slide.service === service) {
+                targetIndex = index;
+                return false;
+            }
+        });
+
+        currentIndex = targetIndex;
         updateImage();
     }
 
     function stepCarousel(direction) {
-        var images = serviceImages[currentService] || [];
-
-        if (!images.length) {
+        if (!slides.length) {
             return;
         }
 
-        currentIndex = (currentIndex + direction + images.length) % images.length;
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
         updateImage();
     }
 
