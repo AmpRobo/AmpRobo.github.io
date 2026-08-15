@@ -4,57 +4,36 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
+                    <div class="services-tabs" role="tablist" aria-label="Services">
+                        <button type="button" class="service-tab active" data-service="product" aria-selected="true">
+                            Product Service
+                        </button>
+                        <button type="button" class="service-tab" data-service="development" aria-selected="false">
+                            Development Service
+                        </button>
+                        <button type="button" class="service-tab" data-service="solution" aria-selected="false">
+                            Solution Service
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="row services-switcher">
-                <div class="col-md-4 services-tabs" role="tablist" aria-label="Services">
-                    <button type="button" class="service-tab active" data-service="hull" aria-selected="true">
-                        Hull Cleaning
-                    </button>
-                    <button type="button" class="service-tab" data-service="dam" aria-selected="false">
-                        Dam Inspection
-                    </button>
-                    <button type="button" class="service-tab" data-service="pipeline" aria-selected="false">
-                        Pipeline Inspection
-                    </button>
-                </div>
-                <div class="col-md-8 services-content">
-                    <article class="service-panel active" data-service-panel="hull">
-                        <img src="{{ site.baseurl }}/img/services/Hull cleaning.png" alt="Hull cleaning robot service">
-                        <div class="service-description">
-                            <h3>Hull Cleaning</h3>
-                            <ul>
-                                <li>Removal and recovery of attached marine growth such as oyster shells and barnacles.</li>
-                                <li>Before-and-after cleaning comparison with video documentation.</li>
-                            </ul>
+            <div class="row services-carousel-wrap">
+                <div class="col-lg-12">
+                    <div class="services-carousel"
+                        data-product-images="{{ site.baseurl }}/img/products/Edge.robo.png"
+                        data-development-images="{{ site.baseurl }}/img/products/amp.robo.png"
+                        data-solution-images="{{ site.baseurl }}/img/services/Hull cleaning.png|{{ site.baseurl }}/img/services/Dam inspection.png|{{ site.baseurl }}/img/services/Pipeline inspection.png">
+                        <button type="button" class="service-carousel-btn service-carousel-prev" aria-label="Previous service image">
+                            <span aria-hidden="true">&lt;</span>
+                        </button>
+                        <div class="service-carousel-frame">
+                            <img class="service-carousel-image" src="{{ site.baseurl }}/img/products/Edge.robo.png" alt="Product service">
                         </div>
-                    </article>
-                    <article class="service-panel" data-service-panel="dam">
-                        <img src="{{ site.baseurl }}/img/services/Dam inspection.png" alt="Dam inspection robot service">
-                        <div class="service-description">
-                            <h3>Dam Inspection</h3>
-                            <ul>
-                                <li>Close visual inspection of vertical and horizontal construction joints.</li>
-                                <li>Crack dimension measurement.</li>
-                                <li>Intake screen inspection.</li>
-                                <li>Removal of submerged driftwood.</li>
-                                <li>Gate door inspection.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="service-panel" data-service-panel="pipeline">
-                        <img src="{{ site.baseurl }}/img/services/Pipeline inspection.png" alt="Pipeline inspection robot service">
-                        <div class="service-description">
-                            <h3>Pipeline Inspection</h3>
-                            <ul>
-                                <li>Close visual inspection of submerged sections.</li>
-                                <li>Mooring line inspection.</li>
-                                <li>Measurement of mooring line riser angles.</li>
-                                <li>Subsea cable inspection.</li>
-                                <li>Magnetic survey of buried cables.</li>
-                            </ul>
-                        </div>
-                    </article>
+                        <button type="button" class="service-carousel-btn service-carousel-next" aria-label="Next service image">
+                            <span aria-hidden="true">&gt;</span>
+                        </button>
+                    </div>
+                    <div class="service-carousel-description" aria-live="polite"></div>
                 </div>
             </div>
         </div>
